@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, Text, Pressable } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   return (
@@ -33,7 +34,16 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
+          <Link href="/" asChild>
+            <Pressable>
+              <Text>Home</Text>
+            </Pressable>
+          </Link> <br />
+          <Link href="/form" asChild>
+            <Pressable>
+              <Text>Form</Text>
+            </Pressable>
+          </Link>
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
